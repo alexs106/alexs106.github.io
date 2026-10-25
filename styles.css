@@ -1,0 +1,41 @@
+html, body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-body {
+    margin-left: 3%;
+    height: 100%;
+}
+
+.main, .competences, .ctf, .contact,
+.about, .projets, .parcours {
+    width: 100%;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.main, .competences, .ctf, .contact{
+    background-color: #fffff1;
+}
+
+.about, .projets, .parcours{
+    background-color: #92a9e1;
+}
+
+.vertical-rectangle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 50px;           /* Adjust the width of the rectangle */
+  height: 100vh;         /* Full height of the viewport */
+  background-color: #262a32; 
+}
