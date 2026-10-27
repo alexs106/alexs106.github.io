@@ -1,8 +1,23 @@
+:root {
+    --color-dark: #262A32;
+    --color-light: #CEE4F9;
+    --color-teal: #024059;
+    --color-cyan: #8FD3E8;
+    --color-accent: #F2B35A;
+    --color-white: #FFFFFF;
+}
+
+* {
+    box-sizing: border-box;
+}
+
 html, body {
-    height: 100vh;
-    width: 100vw;
     margin: 0;
     padding: 0;
+    width: 100%;
+    min-height: 100%;
+    overscroll-behavior-y: none;
+    background-color: var(--color-dark);
 }
 
 body {
@@ -11,31 +26,190 @@ body {
 }
 
 .main-body {
-    margin-left: 3%;
-    height: 100%;
+    margin-left: 100px;
+    width: calc(100% - 100px);
+}
+
+h1{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 50px;
 }
 
 .main, .competences, .ctf, .contact,
 .about, .projets, .parcours {
     width: 100%;
     padding: 40px 20px;
-    box-sizing: border-box;
-    overflow: hidden;
 }
 
-.main, .competences, .ctf, .contact{
-    background-color: #fffff1;
+.main, .competences, .ctf, .contact {
+    background-color: var(--color-light);
+    color: var(--color-dark);
 }
 
-.about, .projets, .parcours{
-    background-color: #92a9e1;
+.about, .projets, .parcours {
+    background-color: var(--color-teal);
+    color: var(--color-white);
 }
 
 .vertical-rectangle {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 50px;           /* Adjust the width of the rectangle */
-  height: 100vh;         /* Full height of the viewport */
-  background-color: #262a32; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100vh;
+    background-color: var(--color-dark);
+}
+
+/*Main section */
+
+.main {
+    position: relative;
+    min-height: 100vh;
+}
+
+.b1-main, .b2-main, .b3-main, .b4-main, .b5-main, .b6-main {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--color-dark);
+    color: var(--color-cyan);
+    border: none;
+
+    width: 280px;
+    height: 70px;
+
+    font-family: "JetBrains Mono", monospace;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+.b1-main {
+    bottom: 200px;
+    left: 200px;
+}
+
+.b2-main {
+    bottom: 100px;
+    left: 200px;
+}
+
+.b3-main {
+    top: 100px;
+    right: 500px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.b4-main {
+    top: 200px;
+    right: 500px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.b5-main {
+    top: 300px;
+    right: 500px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.b6-main {
+    top: 400px;
+    right: 500px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+.profile-card {
+    position: absolute;
+    width: 280px;
+    height: 370px;
+    background-color: var(--color-dark);
+    border-radius: 30px;
+
+    top: 100px;
+    left: 200px;
+}
+
+.int-card {
+    position: absolute;
+    width: 370px;
+    height: 180px;
+    background-color: var(--color-dark);
+    border-radius: 30px;
+
+    top: 505px;
+    left: 500px;
+}
+
+.spotify-card {
+    position: absolute;
+    width: 250px;
+    height: 370px;
+    background-color: var(--color-dark);
+    border-radius: 30px;
+
+    top: 100px;
+    left: 850px;
+}
+
+.links-card {
+    position: absolute;
+    width: 200px;
+    height: 185px;
+    background-color: var(--color-dark);
+    border-radius: 30px;
+
+    bottom: 100px;
+    right: 240px;
+}
+
+/*About section*/
+
+.about{
+    position: relative;
+    min-height: 70vh;
+}
+
+/*Compétences section*/
+
+.competences{
+    position: relative;
+    min-height: 80vh;
+}
+
+/*Projets section*/
+
+.projets{
+    position: relative;
+    min-height: 100vh;
+}
+
+/*CTF section*/
+
+.ctf{
+    position: relative;
+    min-height: 100vh;
+}
+
+/*Parcours section*/
+
+.parcours{
+    position: relative;
+    min-height: 100vh;
+}
+
+/*Contact section*/
+
+.contact{
+    position: relative;
+    min-height: 100vh;
 }
