@@ -35,18 +35,22 @@ h1{
     font-size: 50px;
 }
 
-.main, .competences, .ctf, .contact,
-.about, .projets, .parcours {
+p{
+   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+   font-size: 20px; 
+}
+
+.main, .competences, .ctf, .contact, .projets, .parcours {
     width: 100%;
     padding: 40px 20px;
 }
 
-.main, .competences, .ctf, .contact {
+.main, .projets, .parcours {
     background-color: var(--color-light);
     color: var(--color-dark);
 }
 
-.about, .projets, .parcours {
+.competences, .ctf, .contact {
     background-color: var(--color-teal);
     color: var(--color-white);
 }
@@ -172,18 +176,32 @@ h1{
     right: 240px;
 }
 
-/*About section*/
-
-.about{
-    position: relative;
-    min-height: 70vh;
-}
 
 /*Compétences section*/
 
 .competences{
     position: relative;
-    min-height: 80vh;
+    min-height: 100vh;
+}
+
+/* Qui suis-je ? */
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.about-content p {
+    flex: 1;
+    text-align: justify;
+    line-height: 1.6;
+}
+
+.about-content img {
+    width: 500px;
+    height: 300px;
+    object-fit: cover;
 }
 
 /*Projets section*/
