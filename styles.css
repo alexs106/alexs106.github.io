@@ -3,7 +3,7 @@
     --color-light: #CEE4F9;
     --color-teal: #024059;
     --color-cyan: #8FD3E8;
-    --color-accent: #F2B35A;
+    --color-accent: #910029;
     --color-white: #FFFFFF;
 }
 
@@ -131,6 +131,7 @@ p{
     transform: translateX(-50%);
 }
 
+/*Profile card */
 
 .profile-card {
     position: absolute;
@@ -141,7 +142,33 @@ p{
 
     top: 100px;
     left: 200px;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 25px;
+
+    z-index: 1;
 }
+
+.profile-card-ctn {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.profile-card-ctn img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transform: scale(1.25);
+}
+
+
+/* Interests card */
 
 .int-card {
     position: absolute;
@@ -149,9 +176,27 @@ p{
     height: 180px;
     background-color: var(--color-dark);
     border-radius: 30px;
-
     top: 505px;
     left: 500px;
+    z-index: 1;
+}
+
+.int-card-text {
+    position: absolute;
+    top: 505px;
+    left: 500px;
+    width: 370px;
+    height: 180px;
+    padding: 15px 25px;
+    z-index: 2;
+    color: var(--color-white);
+    text-align: left;
+}
+
+.int-card-text li {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 18px;
+    margin-bottom: 5px;
 }
 
 .spotify-card {
@@ -176,7 +221,6 @@ p{
     right: 240px;
 }
 
-
 /*Compétences section*/
 
 .competences{
@@ -189,7 +233,7 @@ p{
 .about-content {
     display: flex;
     align-items: center;
-    gap: 40px;
+    gap: 120px;
 }
 
 .about-content p {
@@ -230,4 +274,16 @@ p{
 .contact{
     position: relative;
     min-height: 100vh;
+}
+
+.business-card{
+    position: absolute;
+    width: 800px;
+    height: 500px;
+    background-color: var(--color-cyan);
+    box-shadow: 10px 10px var(--color-dark);
+
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
 }
