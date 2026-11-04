@@ -1,3 +1,8 @@
+
+/* ==============================
+   COLOURS
+================================ */
+
 :root {
     --color-dark: #262A32;
     --color-light: #CEE4F9;
@@ -7,8 +12,17 @@
     --color-white: #FFFFFF;
 }
 
+
+/* ==============================
+   GLOBAL STYLES
+================================ */
+
 * {
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 html, body {
@@ -25,265 +39,1034 @@ body {
     flex-direction: column;
 }
 
-.main-body {
-    margin-left: 100px;
-    width: calc(100% - 100px);
-}
-
-h1{
+h1 {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 50px;
 }
 
-p{
-   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-   font-size: 20px; 
+p {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 20px;
 }
 
-.main, .competences, .ctf, .contact, .projets, .parcours {
+
+/* ==============================
+   MAIN LAYOUT
+================================ */
+
+.portfolio-container {
     width: 100%;
-    padding: 40px 20px;
+    margin: 0;
 }
 
-.main, .projets, .parcours {
+/* Sidebar only on home page */
+
+.sidebar {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100px;
+    height: 100vh;
+
+    background-color: var(--color-dark);
+
+    z-index: 10;
+}
+
+
+/* ==============================
+   SECTION COLOURS
+================================ */
+
+.home-section,
+.skills-section,
+.ctf-section,
+.contact-section {
     background-color: var(--color-light);
     color: var(--color-dark);
 }
 
-.competences, .ctf, .contact {
+.about-section,
+.projects-section,
+.experience-section {
     background-color: var(--color-teal);
     color: var(--color-white);
 }
 
-.vertical-rectangle {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100px;
-    height: 100vh;
-    background-color: var(--color-dark);
-}
 
-/*Main section */
+/* ==============================
+   SECTION LAYOUT
+================================ */
 
-.main {
-    position: relative;
+.home-section,
+.projects-section,
+.ctf-section,
+.experience-section,
+.contact-section {
+    width: 100%;
     min-height: 100vh;
+    padding: 40px 20px;
+    position: relative;
 }
 
-.b1-main, .b2-main, .b3-main, .b4-main, .b5-main, .b6-main {
-    position: absolute;
-    display: flex;
+
+/* About and Skills share one screen */
+
+.about-section,
+.skills-section {
+    width: 100%;
+    height: 50vh;
+    min-height: 400px;
+    padding: 25px 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* ==============================
+   HOME SECTION
+================================ */
+
+.home-section {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    padding: 40px 20px 40px 120px;
+
+    display: grid;
+    place-items: center;
+
+    background-color: var(--color-light);
+    color: var(--color-dark);
+}
+
+.home-layout {
+    display: grid;
+
+    grid-template-columns: 280px 370px 250px;
+    grid-template-rows: 370px 185px;
+
+    gap: 30px 45px;
+
     justify-content: center;
-    align-items: center;
+    align-content: center;
 
-    background-color: var(--color-dark);
-    color: var(--color-cyan);
-    border: none;
-
-    width: 280px;
-    height: 70px;
-
-    font-family: "JetBrains Mono", monospace;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-
-    cursor: pointer;
-    border-radius: 30px;
+    width: 100%;
 }
 
-.b1-main {
-    bottom: 200px;
-    left: 200px;
-}
 
-.b2-main {
-    bottom: 100px;
-    left: 200px;
-}
-
-.b3-main {
-    top: 100px;
-    right: 500px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.b4-main {
-    top: 200px;
-    right: 500px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.b5-main {
-    top: 300px;
-    right: 500px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.b6-main {
-    top: 400px;
-    right: 500px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-/*Profile card */
+/* Profile card */
 
 .profile-card {
-    position: absolute;
+    grid-column: 1;
+    grid-row: 1;
+
     width: 280px;
     height: 370px;
+
     background-color: var(--color-dark);
+    color: var(--color-white);
+
     border-radius: 30px;
 
-    top: 100px;
-    left: 200px;
-
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding-top: 25px;
+    flex-direction: column;
+    align-items: center;
 
-    z-index: 1;
+    padding-top: 25px;
 }
 
-.profile-card-ctn {
+.profile-image-container {
     width: 170px;
     height: 170px;
+
     border-radius: 50%;
     overflow: hidden;
 }
 
-.profile-card-ctn img {
+.profile-image-container img {
     display: block;
     width: 100%;
     height: 100%;
+
     object-fit: cover;
     object-position: center;
+
     transform: scale(1.25);
+}
+
+
+/* Navigation */
+
+.main-navigation {
+    grid-column: 2;
+    grid-row: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.navigation-button,
+.resume-button,
+.contact-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 70px;
+
+    background-color: var(--color-dark);
+    color: var(--color-cyan);
+
+    font-family: "JetBrains Mono", monospace;
+    font-size: 24px;
+    font-weight: bold;
+
+    text-decoration: none;
+    border: none;
+    border-radius: 30px;
+
+    cursor: pointer;
+}
+
+
+/* Navigation hover effect */
+
+.navigation-button:hover,
+.resume-button:hover,
+.contact-button:hover {
+    background-color: var(--color-accent);
+    transition: background-color 0.3s ease;
+}
+
+
+/* Home action buttons */
+
+.home-actions {
+    grid-column: 1;
+    grid-row: 2;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.home-actions button,
+.home-actions a {
+    flex-shrink: 0;
+}
+
+
+/* Spotify card */
+
+.spotify-card {
+    grid-column: 3;
+    grid-row: 1;
+
+    width: 250px;
+    height: 370px;
+
+    background-color: var(--color-dark);
+    border-radius: 30px;
 }
 
 
 /* Interests card */
 
-.int-card {
-    position: absolute;
-    width: 370px;
-    height: 180px;
-    background-color: var(--color-dark);
-    border-radius: 30px;
-    top: 505px;
-    left: 500px;
-    z-index: 1;
-}
+.interests-card {
+    grid-column: 2;
+    grid-row: 2;
 
-.int-card-text {
-    position: absolute;
-    top: 505px;
-    left: 500px;
     width: 370px;
-    height: 180px;
+    height: 185px;
+
     padding: 15px 25px;
-    z-index: 2;
+
+    background-color: var(--color-dark);
     color: var(--color-white);
-    text-align: left;
+
+    border-radius: 30px;
 }
 
-.int-card-text li {
+.interests-card li {
     font-family: "JetBrains Mono", monospace;
     font-size: 18px;
     margin-bottom: 5px;
 }
 
-.spotify-card {
-    position: absolute;
+
+/* Social links card */
+
+.social-links-card {
+    grid-column: 3;
+    grid-row: 2;
+
     width: 250px;
-    height: 370px;
-    background-color: var(--color-dark);
-    border-radius: 30px;
-
-    top: 100px;
-    left: 850px;
-}
-
-.links-card {
-    position: absolute;
-    width: 200px;
     height: 185px;
+
     background-color: var(--color-dark);
     border-radius: 30px;
-
-    bottom: 100px;
-    right: 240px;
 }
 
-/*Compétences section*/
 
-.competences{
+
+
+/* ==============================
+   ABOUT SECTION
+================================ */
+
+.about-section {
+    width: 100%;
+    height: 80vh;
+    min-height: 480px;
+    padding: 35px 40px;
     position: relative;
-    min-height: 100vh;
 }
 
-/* Qui suis-je ? */
+.about-section h1 {
+    margin-top: 0;
+    margin-bottom: 25px;
+}
 
 .about-content {
     display: flex;
     align-items: center;
-    gap: 120px;
+    justify-content: space-between;
+    gap: 60px;
+
+    height: 400px;
 }
 
 .about-content p {
     flex: 1;
     text-align: justify;
     line-height: 1.6;
+    font-size: 19px;
 }
 
 .about-content img {
-    width: 500px;
-    height: 300px;
+    width: 40%;
+    height: 350px;
     object-fit: cover;
+    flex-shrink: 0;
 }
 
-/*Projets section*/
 
-.projets{
+
+
+/* ==============================
+   SKILLS SECTION
+================================ */
+
+.skills-section {
+    width: 100%;
+    min-height: 75vh;
+    padding: 40px;
+    background-color: var(--color-light);
+    color: var(--color-dark);
+}
+
+.skills-section h1 {
+    margin-top: 0;
+    margin-bottom: 35px;
+}
+
+
+/* Skills grid */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 180px);
+    gap: 25px 35px;
+}
+
+
+/* Skill card */
+
+.skill-card {
+    width: 100%;
+    height: 180px;
+
+    padding: 0;
+    border: none;
+    background: transparent;
+
+    perspective: 1000px;
+    cursor: pointer;
+
+    text-align: center;
+    font-family: "JetBrains Mono", monospace;
+}
+
+
+/* Inner flip container */
+
+.skill-card-inner {
     position: relative;
-    min-height: 100vh;
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    transform-style: preserve-3d;
+    transition: transform 0.7s cubic-bezier(.2,.7,.3,1);
 }
 
-/*CTF section*/
 
-.ctf{
-    position: relative;
-    min-height: 100vh;
+/* Flip interaction */
+
+.skill-card.is-flipped .skill-card-inner {
+    transform: rotateY(180deg);
 }
 
-/*Parcours section*/
 
-.parcours{
-    position: relative;
-    min-height: 100vh;
-}
+/* Front and back */
 
-/*Contact section*/
-
-.contact{
-    position: relative;
-    min-height: 100vh;
-}
-
-.business-card{
+.skill-card-front,
+.skill-card-back {
     position: absolute;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    border: 6px solid var(--color-teal);
+    box-shadow: 8px 8px 0 rgba(2, 64, 89, 0.25);
+
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+
+/* Front */
+
+.skill-card-front {
+    background-color: var(--color-teal);
+    color: var(--color-light);
+}
+
+
+/* Alternate outline cards */
+
+.skill-card:nth-child(even) .skill-card-front {
+    background-color: transparent;
+    color: var(--color-teal);
+    border-bottom: 6px solid var(--color-teal);
+    border-left: none;
+    border-top: none;
+    border-right: 6px solid var(--color-teal);
+    box-shadow: 8px 8px 0 rgba(2, 64, 89, 0.25);
+}
+
+
+/* Back */
+
+.skill-card-back {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+
+    transform: rotateY(180deg);
+    border: 6px solid var(--color-accent);
+    box-shadow: 8px 8px 0 rgba(38, 42, 50, 0.25);
+}
+
+
+/* Card typography */
+
+.skill-number {
+    position: absolute;
+    top: 12px;
+    left: 15px;
+
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+.skill-name {
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.5;
+}
+
+.skill-description {
+    font-size: 12px;
+    line-height: 1.5;
+    margin-top: 10px;
+}
+
+.skill-hint {
+    position: absolute;
+    bottom: 12px;
+
+    font-size: 9px;
+    letter-spacing: 1px;
+    opacity: 0.7;
+}
+
+
+/* Hover */
+
+.skill-card:hover {
+    transform: translateY(-4px);
+}
+
+.skill-card:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 8px;
+}
+
+
+
+/* ==============================
+   PROJECTS SECTION
+================================ */
+
+.projects-section {
+    min-height: 90vh;
+    padding: 40px;
+    background-color: var(--color-teal);
+    color: var(--color-light);
+
+    position: relative;
+    overflow: hidden;
+
+    padding-bottom: 80px;
+}
+
+.projects-section h1 {
+    margin-top: 0;
+    margin-bottom: 35px;
+}
+
+
+/* Project grid */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 70px;
+
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+
+/* Project card */
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+    min-height: 380px;
+
+    padding: 15px;
+
+    background-color: var(--color-light);
+    color: var(--color-dark);
+
+    border-radius: 8px;
+
+    box-shadow:
+        7px 7px 0 var(--color-dark),
+        12px 12px 0 rgba(0, 0, 0, 0.25);
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+
+/* Hover effect */
+
+.project-card:hover {
+    transform: translateY(-8px) rotate(-1deg);
+
+    box-shadow:
+        9px 9px 0 var(--color-dark),
+        15px 15px 0 rgba(0, 0, 0, 0.25);
+}
+
+
+/* Project image */
+
+.project-image {
+    position: relative;
+
+    width: 100%;
+    height: 150px;
+
+    overflow: hidden;
+    border: 2px solid var(--color-dark);
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit:fill;
+}
+
+
+
+/* Project information */
+
+.project-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    padding: 10px 5px 0;
+}
+
+.project-info h2 {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 15px;
+
+    text-transform: uppercase;
+    margin: 5px 0 10px;
+}
+
+.project-info p {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    line-height: 1.6;
+
+    margin: 0 0 15px;
+}
+
+
+/* GitHub button */
+
+.github-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 80%;
+    min-height: 35px;
+
+    margin: auto auto 5px;
+
+    background-color: var(--color-dark);
+    color: var(--color-light);
+
+    border-radius: 25px;
+
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+
+    text-decoration: none;
+
+    transition: background-color 0.3s ease;
+}
+
+.github-button:hover {
+    background-color: var(--color-accent);
+}
+
+
+
+
+/* =================================
+   PROJECT PAGE CAT EASTER EGG
+================================= */
+
+/* Cat container */
+
+.cat-easter-egg {
+    position: absolute;
+
+    bottom: 0;
+    right: 20%;
+
+    width: 150px;
+    height: 35px;
+
+    padding: 0;
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+    z-index: 5;
+}
+
+/* ASCII drawing */
+
+.ascii-cat {
+    position: absolute;
+
+    bottom: 0;
+    right: 0;
+
+    margin: 0;
+
+    font-family: monospace;
+    font-size: 5px;
+    line-height: 1;
+
+    white-space: pre;
+    color: var(--color-light);
+
+    /* Initially hidden, only ears visible */
+    transform: translateY(70%);
+}
+
+/* Click animation */
+
+.cat-easter-egg.is-active .ascii-cat {
+    animation: cat-jump 0.9s ease-in-out forwards;
+}
+
+/* Jump up, then return to hiding place */
+
+@keyframes cat-jump {
+
+    0% {
+        transform: translateY(85%);
+    }
+
+    35% {
+        transform: translateY(-15%);
+    }
+
+    55% {
+        transform: translateY(-15%);
+    }
+
+    100% {
+        transform: translateY(5%);
+    }
+
+}
+
+/* Message */
+
+.cat-message {
+    position: absolute;
+
+    bottom: 100%;
+    left: 90%;
+
+    width: max-content;
+    max-width: 220px;
+
+    padding: 10px 12px;
+    color: var(--color-light);
+
+    border-radius: 8px;
+
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity 0.3s ease;
+
+    pointer-events: none;
+}
+
+/* Show message after the jump animation */
+
+.cat-easter-egg.is-active .cat-message {
+    opacity: 1;
+    visibility: visible;
+
+    transition-delay: 1.2s;
+}
+
+/* Remove default button focus appearance */
+
+.cat-easter-egg:focus-visible {
+    outline: 2px solid var(--color-dark);
+    outline-offset: 4px;
+}
+
+
+/* ==============================
+   CONTACT SECTION
+================================ */
+
+.business-card {
+    position: absolute;
+
     width: 800px;
     height: 500px;
-    background-color: var(--color-cyan);
-    box-shadow: 10px 10px var(--color-dark);
+
+    background-color: var(--color-dark);
+    box-shadow: 10px 10px var(--color-teal);
 
     top: 25%;
     left: 50%;
+
     transform: translateX(-50%);
+}
+
+
+
+/* ==========================================
+   RESPONSIVE DESIGN
+========================================== */
+
+
+/* ==========================================
+   TABLETS AND SMALL LAPTOPS
+   Maximum width: 1100px
+========================================== */
+
+@media (max-width: 1100px) {
+
+    /* SIDEBAR */
+
+    .sidebar {
+        width: 70px;
+    }
+
+    .home-section {
+        padding-left: 90px;
+    }
+
+
+    /* HOME LAYOUT */
+
+    .home-layout {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-rows: 370px 185px;
+        gap: 20px;
+        width: 100%;
+    }
+
+    .profile-card,
+    .spotify-card,
+    .interests-card,
+    .social-links-card {
+        width: 100%;
+    }
+
+    .navigation-button {
+        font-size: 18px;
+    }
+
+    .home-actions {
+        width: 100%;
+    }
+
+    .resume-button,
+    .contact-button {
+        font-size: 18px;
+    }
+
+
+    /* ABOUT */
+
+    .about-section,
+    .skills-section {
+        height: auto;
+        min-height: 60vh;
+    }
+
+    .about-content {
+        height: auto;
+        gap: 30px;
+    }
+
+    .about-content img {
+        width: 40%;
+        height: 300px;
+    }
+
+
+    /* SKILLS */
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        gap: 20px;
+    }
+
+    .skill-card {
+        height: 180px;
+    }
+
+
+    /* PROJECTS */
+
+    .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 25px;
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE
+   Maximum width: 700px
+========================================== */
+
+@media (max-width: 700px) {
+
+    /* GLOBAL */
+
+    h1 {
+        font-size: 38px;
+    }
+
+    .portfolio-container {
+        margin: 0;
+        width: 100%;
+    }
+
+
+    /* SIDEBAR */
+
+    .sidebar {
+        display: none;
+    }
+
+
+    /* HOME */
+
+    .home-section {
+        padding: 30px 15px;
+    }
+
+    .home-layout {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 25px;
+    }
+
+    .profile-card {
+        width: 280px;
+        flex-shrink: 0;
+    }
+
+    .main-navigation {
+        width: 100%;
+        align-items: center;
+    }
+
+    .navigation-button,
+    .resume-button,
+    .contact-button {
+        width: 100%;
+        max-width: 320px;
+        font-size: 18px;
+    }
+
+    .home-actions {
+        width: 100%;
+        align-items: center;
+    }
+
+    .spotify-card,
+    .social-links-card {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .interests-card {
+        width: 100%;
+        max-width: 370px;
+    }
+
+
+    /* ABOUT */
+
+    .about-section,
+    .skills-section {
+        height: auto;
+        min-height: 0;
+        padding: 30px 20px;
+        overflow: visible;
+    }
+
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        gap: 25px;
+    }
+
+    .about-content p {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .about-content img {
+        width: 100%;
+        height: 220px;
+    }
+
+
+    /* SKILLS */
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 20px;
+    }
+
+    .skill-card {
+        height: 180px;
+    }
+
+
+    /* PROJECTS */
+
+    .projects-section {
+        padding: 30px 20px;
+        position: relative;
+        overflow: hidden;
+        padding-bottom: 80px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .project-card {
+        width: 100%;
+        min-height: 350px;
+    }
+
+    .project-image {
+        height: 160px;
+    }
+
+    .cat-easter-egg {
+        right: 5%;
+        transform: scale(0.8);
+        transform-origin: bottom right;
+    }
+
+
+    /* CONTACT */
+
+    .contact-section {
+        padding: 30px 20px;
+    }
+
+    .business-card {
+        width: 90%;
+        height: 350px;
+    }
+
 }

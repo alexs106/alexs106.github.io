@@ -6,57 +6,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio AMS</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
 
-    <div class="vertical-rectangle"></div>
+    <main class="portfolio-container">
 
-    <div class="main-body">
+        <!-- HOME -->
+        <section class="home-section" id="home">
 
-        <section class="main" id="1">
+            <div class="sidebar"></div>
 
-            <button class="b1-main">Mon CV</button>
-            <a href="#7" class="b2-main">Contact</a>
+            <div class="home-layout">
 
-            <a href="#3" class="b3-main">Compétences</a>
-            <a href="#4" class="b4-main">Projets</a>
-            <a href="#5" class="b5-main">CTF</a>
-            <a href="#6" class="b6-main">Parcours</a>
-
-            <div class="profile-card">
-                <div class="profile-card-ctn">
-                    <img src="images/wolf.png" alt="Alex">
+                <div class="profile-card">
+                    <div class="profile-image-container">
+                        <img src="images/wolf.png" alt="Alex">
+                    </div>
                     <p>Alexandra Michales</p>
                     <p>@amichaels</p>
                 </div>
-            </div>
-            <div class="int-card"></div>
-            <div class="spotify-card"></div>
-            <div class="links-card"></div>
 
-            <div class="int-card-text">
-                <ul>
-                    <li>GRC</li>
-                    <li>Pentest & Red Team</li>
-                    <li>OSINT</li>
-                    <li>Sécurité Opérationnelle</li>
-                </ul>
+                <nav class="main-navigation">
+                    <a href="#about" class="navigation-button">Compétences</a>
+                    <a href="#projects" class="navigation-button">Projets</a>
+                    <a href="#ctf" class="navigation-button">CTF</a>
+                    <a href="#experience" class="navigation-button">Parcours</a>
+                </nav>
+
+                <div class="spotify-card"></div>
+
+                <div class="home-actions">
+                    <button class="resume-button">Mon CV</button>
+                    <a href="#contact" class="contact-button">Contact</a>
+                </div>
+
+                <div class="interests-card">
+                    <ul>
+                        <li>GRC</li>
+                        <li>Pentest & Red Team</li>
+                        <li>OSINT</li>
+                        <li>Sécurité Opérationnelle</li>
+                    </ul>
+                </div>
+
+                <div class="social-links-card"></div>
+
             </div>
 
         </section>
 
-        <section class="competences" id="3">
+
+        <!-- ABOUT ME -->
+        <section class="about-section" id="about">
+
             <h1>Qui suis-je ?</h1>
 
             <div class="about-content">
                 <p>
                     Alternante en Sécurité Opérationnelle chez CCC et M2 SSI à SSS,
                     j'aime comprendre comment les choses fonctionnent et comment
-                    elles peuvent être détournées. Depuis que j'ai regardé The Net (1995), la curiosité est restée
-                    et ça m'a influencé dans mon intérêt pour l'OSINT, la GRC ou encore la sécurité offensive.<br>
-                    On me voit rarement sans une tasse de thé à la main et très souvent entrain de réflechir sur 
-                    comment casser un nouvel environnement et donc mieux le protéger.
+                    elles peuvent être détournées. Depuis que j'ai regardé The Net (1995),
+                    la curiosité est restée et ça m'a influencée dans mon intérêt
+                    pour l'OSINT, la GRC ou encore la sécurité offensive.
+
+                    <br><br>
+
+                    On me voit rarement sans une tasse de thé à la main et très
+                    souvent en train de réfléchir à comment casser un nouvel
+                    environnement et donc mieux le protéger.
                 </p>
 
                 <img src="images/ctf.jpg" alt="Alex hacking">
@@ -64,25 +83,304 @@
 
         </section>
 
-        <section class="projets" id="4">
-            <h1>Projets</h1>
+
+        
+        <!-- SKILLS SECTION -->
+        <section class="skills-section" id="skills">
+
+            <h1>Compétences</h1>
+
+            <div class="skills-grid">
+
+                <!-- SKILL 1 -->
+                <button class="skill-card" aria-expanded="false">
+                    <span class="skill-card-inner">
+
+                        <span class="skill-card-front">
+                            <span class="skill-name">Gouvernance, Risques, Conformité - GRC</span>
+                        </span>
+
+                        <span class="skill-card-back">
+                            <span class="skill-description">
+                                Analyse des risques, conformité et
+                                compréhension des référentiels de sécurité.
+                                <br><br>
+                                Expérience acquise grâce à mon alternance
+                                et à ma formation en SSI.
+                            </span>
+                        </span>
+
+                    </span>
+                </button>
+
+
+                <!-- SKILL 2 -->
+                <button class="skill-card" aria-expanded="false">
+                    <span class="skill-card-inner">
+
+                        <span class="skill-card-front">
+                            <span class="skill-name">OSINT</span>
+                        </span>
+
+                        <span class="skill-card-back">
+                            <span class="skill-description">
+                                Recherche, collecte et analyse
+                                d'informations en sources ouvertes.
+                                <br><br>
+                                Développé à travers mes recherches
+                                personnelles et mes challenges CTF.
+                            </span>
+                        </span>
+
+                    </span>
+                </button>
+
+
+                <!-- SKILL 3 -->
+                <button class="skill-card" aria-expanded="false">
+                    <span class="skill-card-inner">
+
+                        <span class="skill-card-front">
+                            <span class="skill-name">Sécurité Opérationnelle</span>
+                        </span>
+
+                        <span class="skill-card-back">
+                            <span class="skill-description">
+                                Surveillance, analyse et gestion
+                                des événements de sécurité.
+                                <br><br>
+                                Compétences développées dans le cadre
+                                de mon alternance.
+                            </span>
+                        </span>
+
+                    </span>
+                </button>
+
+
+                <!-- SKILL 4 -->
+                <button class="skill-card" aria-expanded="false">
+                    <span class="skill-card-inner">
+
+                        <span class="skill-card-front">
+                            <span class="skill-name">Pentest</span>
+                        </span>
+
+                        <span class="skill-card-back">
+                            <span class="skill-description">
+                                Compréhension des vulnérabilités,
+                                méthodologies de test et analyse
+                                de la sécurité des systèmes.
+                                <br><br>
+                                Pratique personnelle et challenges.
+                            </span>
+                        </span>
+
+                    </span>
+                </button>
+
+
+                <!-- SKILL 5 -->
+                <button class="skill-card" aria-expanded="false">
+                    <span class="skill-card-inner">
+
+                        <span class="skill-card-front">
+                            <span class="skill-name">Vulnerability Management</span>
+                        </span>
+
+                        <span class="skill-card-back">
+                            <span class="skill-description">
+                                Identification, évaluation et
+                                priorisation des vulnérabilités.
+                                <br><br>
+                                Connaissances développées durant
+                                ma formation et mes expériences.
+                            </span>
+                        </span>
+
+                    </span>
+                </button>
+
+
+                <!-- SKILL 6 -->
+                <button class="skill-card" aria-expanded="false">
+                    <span class="skill-card-inner">
+
+                        <span class="skill-card-front">
+                            <span class="skill-name">Sécurité Cloud</span>
+                        </span>
+
+                        <span class="skill-card-back">
+                            <span class="skill-description">
+                                Compréhension des environnements cloud,
+                                de leurs risques et de leurs mécanismes
+                                de protection.
+                                <br><br>
+                                Connaissances acquises durant ma formation.
+                            </span>
+                        </span>
+
+                    </span>
+                </button>
+
+            </div>
+
         </section>
 
-        <section class="ctf" id="5">
+        
+        <!-- PROJECTS SECTION -->
+        <section class="projects-section" id="projects">
+
+            <h1>Projets</h1>
+
+            <div class="projects-grid">
+
+                <!-- PROJECT 1 -->
+                <article class="project-card">
+
+                    <div class="project-image">
+                        <img src="images/image.png" alt="Audit Goldpharma">
+                    </div>
+
+                    <div class="project-info">
+                        <h2>Audit Goldpharma</h2>
+
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur
+                            adipiscing elit. Présentation rapide
+                            du projet et de ses objectifs.
+                        </p>
+
+                        <a href="https://github.com/USERNAME/REPOSITORY"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="github-button">
+                            GitHub link
+                        </a>
+                    </div>
+
+                </article>
+
+
+                <!-- PROJECT 2 -->
+                <article class="project-card">
+
+                    <div class="project-image">
+                        <img src="images/image.png" alt="Jurassic Park">
+                    </div>
+
+                    <div class="project-info">
+                        <h2>Jurassic Park</h2>
+
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur
+                            adipiscing elit. Présentation rapide
+                            du projet et de ses objectifs.
+                        </p>
+
+                        <a href="https://github.com/USERNAME/REPOSITORY"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="github-button">
+                            GitHub link
+                        </a>
+                    </div>
+
+                </article>
+
+
+                <!-- PROJECT 3 -->
+                <article class="project-card">
+
+                    <div class="project-image">
+                        <img src="images/image.png" alt="Cyberdeck">
+                    </div>
+
+                    <div class="project-info">
+                        <h2>Cyberdeck</h2>
+
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur
+                            adipiscing elit. Présentation rapide
+                            du projet et de ses objectifs.
+                        </p>
+
+                        <a href="https://github.com/USERNAME/REPOSITORY"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="github-button">
+                            GitHub link
+                        </a>
+                    </div>
+
+                </article>
+
+            </div>
+
+             <!-- ASCII CAT EASTER EGG -->
+
+                <button class="cat-easter-egg" id="cat-easter-egg"
+                        type="button" aria-label="Wake up the hidden cat">
+
+                    <pre class="ascii-cat">
+                    ⠀⠀⠀⠀⠀⠀⠀⠀⢺⣿⣿⡆⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                    ⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⡇⠀⠀⠀⠀⠀⠀⣾⢡⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢢⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                    ⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⣿⣷⡦⠀⠀⠀⠀⢰⣿⣿⣷⠀⠀⠀⠀⠀⠀⠀⠀⠃⣠⣾⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⣿⣿⣿⣆⠀⠀⠀⣾⣿⣿⣿⣷⠄⠀⠰⠤⣀⠀⠀⣴⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                    ⠀⠀⠀⠀⠀⠀⠀⠀⠃⢺⣿⣿⣿⣿⡄⠀⠀⣿⣿⢿⣿⣿⣦⣦⣦⣶⣼⣭⣼⣿⣿⣿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢿⣿⣿⣿⣷⡆⠂⣿⣿⣞⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢙⣿⣿⣿⣿⣷⠸⣿⣿⣿⣿⣿⣿⠟⠻⣿⣿⣿⣿⡿⣿⣿⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠄⢿⣿⣿⣿⣿⡄⣿⣿⣿⣿⣿⣿⡀⢀⣿⣿⣿⣿⠀⢸⣿⣿⠅⠀⠀⠀⠀⠀⠀⠀⠀
+                    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣿⣿⣿⣿⣇⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠁⠀⠀⠀⠀⠀⠀⠀⠀
+                    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⢐⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⣠⣾⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+                    ⠀⠀⠀⠀⠀⢁⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                    ⠀⠀⠀⠀⠠⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣄⠀⠀⠀⠀⠀⠀⠀⠀
+                    ⠀⠀⠀⠀⣀⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄⠀⠀⠀⠀⠀⠀⠀
+                    ⠀⠀⠀⠀⣻⣿⣿⣿⣿⣿⡟⠋⠙⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠙⢿⣿⣿⣿⣿⣿⣿⣄⠀⠀⠀⠀⠀⠀
+                    ⠀⠀⠀⣿⣿⣿⣿⣿⡿⠋⠀⠀⠀⢿⣿⣿⣿⣿⣿⣿⠿⢿⡿⠛⠋⠁⠀⠀⠈⠻⣿⣿⣿⣿⣿⣿⣅⠀⠀⠀⠀⠀
+                    ⠀⠀⠀⣿⣿⣿⣿⡟⠃⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢻⣿⣿⣿⣿⣿⣤⡀⠀⠀⠀
+                    ⠀⠜⢠⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⢿⣿⣿⣿⣿⣿⣗⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⣿⣿⣿⣿⣿⣦⠄⣠⠀
+                    ⠠⢸⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⣿⣿⣿⣿⣿
+                    ⠀⠛⣿⣿⣿⡿⠏⠀⠀⠀⠀⠀⠀⢳⣾⣿⣿⣿⣿⣿⣿⡶⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿
+                      ⠀⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠙⣿⣿⡿⡿⠿⠛⠙⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⠏⠉⠻⠿⠟⠁
+                    </pre>
+
+                    <span class="cat-message">
+                        psst... tu cherches des vulns?
+                    </span>
+
+                </button>
+
+
+        </section>
+
+
+
+        <!-- CTF -->
+        <section class="ctf-section" id="ctf">
             <h1>Capture The Flag</h1>
         </section>
 
-        <section class="parcours" id="6">
+
+        <!-- EXPERIENCE -->
+        <section class="experience-section" id="experience">
             <h1>Parcours</h1>
         </section>
 
-        <section class="contact" id="7">
+
+        <!-- CONTACT -->
+        <section class="contact-section" id="contact">
+
             <h1>Contact</h1>
 
             <div class="business-card"></div>
+
         </section>
 
-    </div>
+    </main>
+    
 
 </body>
 </html>
