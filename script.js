@@ -39,3 +39,25 @@ if (cat) {
     });
 
 }
+
+const audio = document.getElementById("portfolio-audio");
+const playButton = document.getElementById("play-button");
+
+playButton.addEventListener("click", () => {
+
+    if (audio.paused) {
+        audio.play();
+        playButton.innerHTML = "&#10074;&#10074;";
+        playButton.setAttribute("aria-label", "Pause music");
+    } else {
+        audio.pause();
+        playButton.innerHTML = "&#9654;";
+        playButton.setAttribute("aria-label", "Play music");
+    }
+
+});
+
+audio.addEventListener("ended", () => {
+    playButton.innerHTML = "&#9654;";
+    playButton.setAttribute("aria-label", "Play music");
+});

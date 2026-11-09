@@ -181,8 +181,8 @@ p {
 }
 
 .profile-image-container {
-    width: 170px;
-    height: 170px;
+    width: 190px;
+    height: 190px;
 
     border-radius: 50%;
     overflow: hidden;
@@ -198,6 +198,24 @@ p {
 
     transform: scale(1.25);
 }
+
+.profile-card h1 {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 18px 0 12px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.profile-card p {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 18px;
+    margin: 0;
+    color: var(--color-light);
+}
+
 
 
 /* Navigation */
@@ -264,7 +282,9 @@ p {
 }
 
 
-/* Spotify card */
+/* ==============================
+   MUSIC PLAYER
+================================ */
 
 .spotify-card {
     grid-column: 3;
@@ -275,6 +295,98 @@ p {
 
     background-color: var(--color-dark);
     border-radius: 30px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 25px 20px;
+}
+
+/* Album artwork */
+
+.album-cover {
+    width: 170px;
+    height: 170px;
+
+    border-radius: 10px;
+    overflow: hidden;
+
+    background-color: var(--color-light);
+}
+
+.album-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Track information */
+
+.music-information {
+    width: 100%;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.music-information h2 {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 20px;
+    font-weight: normal;
+
+    color: var(--color-light);
+    margin: 0;
+}
+
+.music-information p {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 15px;
+    font-style: italic;
+
+    color: var(--color-cyan);
+    margin-top: 5px;
+}
+
+/* Controls */
+
+.music-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.music-controls button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 35px;
+    height: 35px;
+
+    border: none;
+    border-radius: 50%;
+
+    background-color: var(--color-light);
+    color: var(--color-dark);
+
+    font-size: 13px;
+    cursor: pointer;
+
+    transition: transform 0.2s ease,
+                background-color 0.2s ease;
+}
+
+.music-controls button:hover {
+    background-color: var(--color-cyan);
+    transform: scale(1.1);
+}
+
+.music-controls button:focus-visible {
+    outline: 2px solid var(--color-cyan);
+    outline-offset: 4px;
 }
 
 
@@ -302,7 +414,9 @@ p {
 }
 
 
-/* Social links card */
+/* ==============================
+   SOCIAL LINKS
+================================ */
 
 .social-links-card {
     grid-column: 3;
@@ -313,8 +427,34 @@ p {
 
     background-color: var(--color-dark);
     border-radius: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 25px;
 }
 
+.social-links-card a {
+    color: var(--color-cyan);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: color 0.3s ease,
+                transform 0.3s ease;
+}
+
+.social-links-card a:hover {
+    color: var(--color-cy);
+    transform: translateY(-5px);
+}
+
+.social-links-card a:focus-visible {
+    outline: 2px solid var(--color-cyan);
+    outline-offset: 5px;
+}
 
 
 
@@ -324,7 +464,7 @@ p {
 
 .about-section {
     width: 100%;
-    height: 80vh;
+    height: 100vh;
     min-height: 480px;
     padding: 35px 40px;
     position: relative;
@@ -367,7 +507,7 @@ p {
 
 .skills-section {
     width: 100%;
-    min-height: 75vh;
+    min-height: 100vh;
     padding: 40px;
     background-color: var(--color-light);
     color: var(--color-dark);
@@ -385,7 +525,10 @@ p {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 180px);
-    gap: 25px 35px;
+    gap: 60px 35px;
+
+    max-width: 1100px;
+    margin: 100px auto 0;
 }
 
 
@@ -393,7 +536,7 @@ p {
 
 .skill-card {
     width: 100%;
-    height: 180px;
+    justify-self: center;
 
     padding: 0;
     border: none;
@@ -467,7 +610,7 @@ p {
     border-left: none;
     border-top: none;
     border-right: 6px solid var(--color-teal);
-    box-shadow: 8px 8px 0 rgba(2, 64, 89, 0.25);
+    box-shadow: 0px 8px 8px rgba(2, 64, 89, 0.25);
 }
 
 
@@ -535,7 +678,7 @@ p {
 ================================ */
 
 .projects-section {
-    min-height: 90vh;
+    min-height: 100vh;
     padding: 40px;
     background-color: var(--color-teal);
     color: var(--color-light);
@@ -571,7 +714,7 @@ p {
     flex-direction: column;
 
     min-width: 0;
-    min-height: 380px;
+    min-height: 400px;
 
     padding: 15px;
 
@@ -606,7 +749,7 @@ p {
     position: relative;
 
     width: 100%;
-    height: 150px;
+    height: 200px;
 
     overflow: hidden;
     border: 2px solid var(--color-dark);
@@ -633,7 +776,7 @@ p {
 
 .project-info h2 {
     font-family: "JetBrains Mono", monospace;
-    font-size: 15px;
+    font-size: 20px;
 
     text-transform: uppercase;
     margin: 5px 0 10px;
@@ -690,7 +833,7 @@ p {
     position: absolute;
 
     bottom: 0;
-    right: 20%;
+    right: 30%;
 
     width: 150px;
     height: 35px;
@@ -795,6 +938,85 @@ p {
     outline-offset: 4px;
 }
 
+/* ==============================
+   CTF SECTION
+================================ */
+
+.ctf-section {
+    position: relative;
+    height: 102vh;
+    background: var(--color-light);
+    color: var(--color-dark);
+    overflow: hidden;
+    padding: 35px 40px;
+}
+
+.ctf-section h1 {
+    color: var(--color-teal);
+    font-size: 64px;
+    margin: 0;
+}
+
+
+/* ==============================
+   STAIRCASE
+================================ */
+
+.staircase {
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    margin: 180px auto 0;
+}
+
+
+/* ==============================
+   CTF CARDS
+================================ */
+
+.ctf-card {
+    position: relative;
+
+    background-color: var(--color-dark);
+    color: var(--color-light);
+
+    padding: 26px;
+    width: 65%;
+    min-height: 165px;
+
+    font-family: "JetBrains Mono", monospace;
+
+    border-bottom: 1px solid var(--color-light);
+}
+
+.ctf-card h2 {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 23px;
+    margin: 0 0 14px;
+}
+
+.ctf-card p {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+
+/* ==============================
+   STAIRCASE POSITIONING
+================================ */
+
+.card-1 {
+    margin-left: 35%;
+}
+
+.card-2 {
+    margin-left: 20%;
+}
+
+.card-3 {
+    margin-left: 5%;
+}
 
 /* ==============================
    CONTACT SECTION
